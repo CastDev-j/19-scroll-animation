@@ -41,8 +41,9 @@ body::-webkit-scrollbar-thumb:hover {
 h1 {
   color: #fff;
   font-family: 'Arial', sans-serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   z-index: 1;
+  text-transform: uppercase;
 }
 
 article {
