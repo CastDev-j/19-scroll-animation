@@ -41,7 +41,7 @@ const toonTexture = textureLoader.load('/gradients/3.jpg')
 
 const material = new THREE.MeshToonMaterial({
   color: parameters.color,
-  al
+  alphaMap: toonTexture,
 });
 
 objectsFolder
