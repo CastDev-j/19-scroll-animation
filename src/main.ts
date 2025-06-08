@@ -217,16 +217,24 @@ tick();
 
 // Handle window resize
 
-window.addEventListener("resize", () => {
-  const [width, height] = [
-    (canvas.width = window.innerWidth),
-    (canvas.height = window.innerHeight),
-  ];
+function handleResize() {
+  const visualViewport = window.visualViewport!;
+  const width = visualViewport.width;
+  const height = visualViewport.height;
 
-  // Update camera aspect ratio and renderer size
+  canvas.width = width;
+  canvas.height = height;
+
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
 
   renderer.setSize(width, height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-});
+}
+
+// Usar el evento 'resize' de visualViewport para móviles
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', handleResize);
+} else {
+  window.addEventListener('resize', handleResize);
+}
