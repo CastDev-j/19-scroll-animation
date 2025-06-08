@@ -130,11 +130,12 @@ scene.add(cameraGroup);
 
 // set up lights
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 3);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 4);
 
 directionalLight.position.set(1, 1, 0);
 
 scene.add(directionalLight);
+
 
 // set up renderer
 
